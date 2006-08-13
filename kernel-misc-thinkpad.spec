@@ -13,7 +13,7 @@ Version:	6.0
 Release:	%{_rel}@%{_kernel_ver_str}
 License:	GPL v2
 Group:		Base/Kernel
-Source0:	%{_name}_%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/tpctl/%{_name}_%{version}.tar.gz
 # Source0-md5:	d6549f4fe51f594a20d1498f06def010
 URL:		http://tpctl.sourceforge.net/
 BuildRequires:	rpmbuild(macros) >= 1.308
@@ -45,6 +45,7 @@ Requires(post,postun):	/sbin/depmod
 %requires_releq_kernel_smp
 Requires(postun):	%releq_kernel_smp
 %endif
+Requires(post,postun):	/sbin/depmod
 
 %description -n kernel%{_alt_kernel}-smp-misc-thinkpad
 This is driver for ThinkPad laptops for Linux.
