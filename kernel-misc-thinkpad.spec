@@ -147,14 +147,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc ChangeLog README SUPPORTED-MODELS TECHNOTES
+%doc AUTHORS ChangeLog README SUPPORTED-MODELS TECHNOTES
 /lib/modules/%{_kernel_ver}/misc/thinkpad
 %{_mandir}/man4/thinkpad.4*
 
 %if %{with smp} && %{with dist_kernel}
 %files -n kernel%{_alt_kernel}-smp-misc-thinkpad
 %defattr(644,root,root,755)
-%doc ChangeLog README SUPPORTED-MODELS TECHNOTES
+%doc AUTHORS ChangeLog README SUPPORTED-MODELS TECHNOTES
 /lib/modules/%{_kernel_ver}smp/misc/thinkpad
 # i know it would get double packed when up & smp installed, but rpm handles this
 %{_mandir}/man4/thinkpad.4*
