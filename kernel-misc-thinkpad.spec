@@ -6,8 +6,8 @@
 
 %define		_name thinkpad
 %define 	_rel 1
-Summary:	Linux driver for ThinkPad laptops
-Summary(pl):	Sterownik dla Linuksa do laptopów ThinkPad
+Summary:	Linux drivers for ThinkPad laptops
+Summary(pl):	Sterowniki dla Linuksa do laptopów ThinkPad
 Name:		kernel%{_alt_kernel}-misc-thinkpad
 Version:	6.0
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -27,18 +27,18 @@ ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is driver for ThinkPad laptops for Linux.
+These are drivers for ThinkPad laptops for Linux.
 
-This package contains Linux module.
+This package contains Linux modules.
 
 %description -l pl
-Sterownik dla Linuksa do laptopów ThinkPad.
+Sterowniki dla Linuksa do laptopów ThinkPad.
 
-Ten pakiet zawiera modu³ j±dra Linuksa.
+Ten pakiet zawiera modu³y j±dra Linuksa.
 
 %package -n kernel%{_alt_kernel}-smp-misc-thinkpad
-Summary:	Linux SMP driver for ThinkPad laptops
-Summary(pl):	Sterownik dla Linuksa SMP do laptotów ThinkPad
+Summary:	Linux SMP drivers for ThinkPad laptops
+Summary(pl):	Sterowniki dla Linuksa SMP do laptotów ThinkPad
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
 %if %{with dist_kernel}
@@ -48,14 +48,14 @@ Requires(postun):	%releq_kernel_smp
 Requires(post,postun):	/sbin/depmod
 
 %description -n kernel%{_alt_kernel}-smp-misc-thinkpad
-This is driver for ThinkPad laptops for Linux.
+These are drivers for ThinkPad laptops for Linux.
 
-This package contains Linux SMP module.
+This package contains Linux SMP modules.
 
 %description -n kernel%{_alt_kernel}-smp-misc-thinkpad -l pl
-Sterownik dla Linuksa do laptopów ThinkPad.
+Sterowniki dla Linuksa do laptopów ThinkPad.
 
-Ten pakiet zawiera modu³ j±dra Linuksa SMP.
+Ten pakiet zawiera modu³y j±dra Linuksa SMP.
 
 %prep
 %setup -q -n %{_name}-%{version}
@@ -106,9 +106,8 @@ cd $_PWD
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT/%{_mandir}/man4
-install man/thinkpad.4 $RPM_BUILD_ROOT/%{_mandir}/man4
+install -d $RPM_BUILD_ROOT%{_mandir}/man4
+install man/thinkpad.4 $RPM_BUILD_ROOT%{_mandir}/man4
 
 install -d $RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}{,smp}/misc/thinkpad
 install 2.6/drivers/thinkpad-%{?with_dist_kernel:up}%{!?with_dist_kernel:nondist}.ko \
