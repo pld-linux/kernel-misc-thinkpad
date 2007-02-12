@@ -7,7 +7,7 @@
 %define		_name thinkpad
 %define 	_rel 1
 Summary:	Linux drivers for ThinkPad laptops
-Summary(pl):	Sterowniki dla Linuksa do laptop體 ThinkPad
+Summary(pl.UTF-8):   Sterowniki dla Linuksa do laptop贸w ThinkPad
 Name:		kernel%{_alt_kernel}-misc-thinkpad
 Version:	6.0
 Release:	%{_rel}@%{_kernel_ver_str}
@@ -31,14 +31,14 @@ These are drivers for ThinkPad laptops for Linux.
 
 This package contains Linux modules.
 
-%description -l pl
-Sterowniki dla Linuksa do laptop體 ThinkPad.
+%description -l pl.UTF-8
+Sterowniki dla Linuksa do laptop贸w ThinkPad.
 
-Ten pakiet zawiera modu硑 j眃ra Linuksa.
+Ten pakiet zawiera modu艂y j膮dra Linuksa.
 
 %package -n kernel%{_alt_kernel}-smp-misc-thinkpad
 Summary:	Linux SMP drivers for ThinkPad laptops
-Summary(pl):	Sterowniki dla Linuksa SMP do laptot體 ThinkPad
+Summary(pl.UTF-8):   Sterowniki dla Linuksa SMP do laptot贸w ThinkPad
 Group:		Base/Kernel
 Requires(post,postun):	/sbin/depmod
 %if %{with dist_kernel}
@@ -52,10 +52,10 @@ These are drivers for ThinkPad laptops for Linux.
 
 This package contains Linux SMP modules.
 
-%description -n kernel%{_alt_kernel}-smp-misc-thinkpad -l pl
-Sterowniki dla Linuksa do laptop體 ThinkPad.
+%description -n kernel%{_alt_kernel}-smp-misc-thinkpad -l pl.UTF-8
+Sterowniki dla Linuksa do laptop贸w ThinkPad.
 
-Ten pakiet zawiera modu硑 j眃ra Linuksa SMP.
+Ten pakiet zawiera modu艂y j膮dra Linuksa SMP.
 
 %prep
 %setup -q -n %{_name}-%{version}
