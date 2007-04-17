@@ -2,6 +2,7 @@
 # Conditional build:
 %bcond_without	dist_kernel	# allow non-distribution kernel
 %bcond_without	smp		# don't build SMP module
+%bcond_without	up		# don't build UP module
 %bcond_with	verbose		# verbose build (V=1)
 
 %define		_name thinkpad
