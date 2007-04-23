@@ -69,6 +69,7 @@ for cfg in %{?with_dist_kernel:%{?with_smp:smp} up}%{!?with_dist_kernel:nondist}
 	if [ ! -r "%{_kernelsrcdir}/config-$cfg" ]; then
 		exit 1
 	fi
+	rm -rf o
 	install -d o/include/linux
 	ln -sf %{_kernelsrcdir}/config-$cfg o/.config
 	ln -sf %{_kernelsrcdir}/Module.symvers-$cfg o/Module.symvers
@@ -120,13 +121,13 @@ install 2.6/drivers/superio-%{?with_dist_kernel:up}%{!?with_dist_kernel:nondist}
 install 2.6/drivers/rtcmosram-%{?with_dist_kernel:up}%{!?with_dist_kernel:nondist}.ko \
 	$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}/misc/thinkpad/rtcmosram.ko
 %if %{with smp} && %{with dist_kernel}
-install 2.6/driver/thinkpad-smp.ko \
+install 2.6/drivers/thinkpad-smp.ko \
 	$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/thinkpad/thinkpad.ko
-install 2.6/driver/smapi-smp.ko \
+install 2.6/drivers/smapi-smp.ko \
 	$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/thinkpad/smapi.ko
-install 2.6/driver/superio-smp.ko \
+install 2.6/drivers/superio-smp.ko \
 	$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/thinkpad/superio.ko
-install 2.6/driver/rtcmosram-smp.ko \
+install 2.6/drivers/rtcmosram-smp.ko \
 	$RPM_BUILD_ROOT/lib/modules/%{_kernel_ver}smp/misc/thinkpad/rtcmosram.ko
 %endif
 
